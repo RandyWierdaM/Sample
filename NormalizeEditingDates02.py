@@ -6,7 +6,7 @@ import shutil
 
 #Connection Parameters
 instance = 'LOCALHOST\westlockgis'
-databaseName = 'ToWInterim'
+databaseName = 'ToWBase'
 versionName = 'dbo.DEFAULT'
 ConnectionFile = 'ConnectionFile.sde'
 AuthType = 'OPERATING_SYSTEM_AUTH'
@@ -17,7 +17,7 @@ userPassword = '#'
 #Create a temp directory using tempfile module to store SDE connection files
 sdeTempPath = tempfile.mkdtemp()
 ConnectionFilePth = os.path.join(sdeTempPath,ConnectionFile)
-print ConnectionFilePth
+print (ConnectionFilePth)
 
 #Setup SDE Connection
 arcpy.CreateDatabaseConnection_management(sdeTempPath,ConnectionFile,'SQL_SERVER',instance,AuthType,userName, userPassword, '#',databaseName,'#','#', versionName)
